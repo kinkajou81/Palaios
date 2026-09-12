@@ -2,8 +2,7 @@
 #include <stdint.h>
 #include <windows.h>
 
-#include "renderer.cpp"
-#include "windowing.cpp"
+#include "common.hpp"
 
 thread_local int16_t common_error = 0;
 

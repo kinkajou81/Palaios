@@ -24,7 +24,7 @@ void open_main_window(LPCTSTR window_title, HICON window_icon, HICON small_windo
         }
     );
     if(window_class == 0) {
-        printf("Main Window Failed To Be Created, Error code: %lu\n", GetLastError());
+        printf("Main Window Class Failed To Be Created, Error code: %lu\n", GetLastError());
         exit(-1);
     }
 

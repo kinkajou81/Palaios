@@ -11,7 +11,7 @@ void register_raw_input_devices(HWND hWnd) {
     // keyboard
     Rid = (RAWINPUTDEVICE) {
         .usUsagePage = 0x01,
-        .usUsage = 0x06,
+        .usUsage = 0x07,
         .dwFlags = 0,
         .hwndTarget = hWnd
     };

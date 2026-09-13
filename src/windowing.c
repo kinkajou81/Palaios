@@ -85,6 +85,9 @@ bool launched_from_console() {
     return (count > 1)&&(count != 0);
 }
 
+void hide_terminal() {
+    if(launched_from_console()) return;
+    
     HWND console = GetConsoleWindow();
     if(console != NULL) ShowWindow(console, SW_HIDE);
     else {

@@ -56,7 +56,7 @@ void open_main_window(LPCTSTR window_title, HICON window_icon, HICON small_windo
 LRESULT WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
     switch(uMsg) {
         default: {
-            break;
+            return DefWindowProc(hWnd, uMsg, wParam, lParam);
         }
         case WM_INPUT: {
             PUINT pcbSize = NULL;

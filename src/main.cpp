@@ -5,7 +5,7 @@
 #include <windows.h>
 #include <stdio.h>
 
-#include "windowing.hpp"
+#include "windowing.h"
 
 thread_local int16_t common_error = 0;
 

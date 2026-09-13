@@ -1,9 +1,10 @@
+#include "common.hpp"
+
 #include <stdlib.h>
 #include <stdint.h>
 #include <windows.h>
 #include <stdio.h>
 
-#include "common.hpp"
 #include "windowing.hpp"
 
 thread_local int16_t common_error = 0;

@@ -1,3 +1,5 @@
+#include "common.hpp"
+
 #include <windows.h>
 #include <stdbool.h>
 #include <stdio.h>

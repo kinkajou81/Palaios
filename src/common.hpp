@@ -1,5 +1,9 @@
 #pragma once
 
+// this header must be included in every file before <windows.h>
+
+#undef UNICODE
+
 #ifdef __cplusplus
 extern "C" {
 #endif

@@ -6,12 +6,12 @@
 
 #include "windowing.hpp"
 
-void open_main_window(LPCTSTR window_title, HICON window_icon, HICON small_window_icon, COLORREF background_color, WNDPROC Wndproc) {
+void open_main_window(LPCTSTR window_title, HICON window_icon, HICON small_window_icon, COLORREF background_color, WNDPROC window_process) {
     ATOM window_class = RegisterClassExA(
         &(WNDCLASSEXA) {
             .cbSize = sizeof(WNDCLASSEXA),
             .style = CS_HREDRAW | CS_VREDRAW | CS_BYTEALIGNCLIENT | CS_BYTEALIGNWINDOW,
-            .lpfnWndProc = Wndproc,
+            .lpfnWndProc = window_process,
             .cbClsExtra = 0,
             .cbWndExtra = 0,
             .hInstance = GetModuleHandle(NULL),

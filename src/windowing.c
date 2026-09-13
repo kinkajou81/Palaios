@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-#include "windowing.hpp"
+#include "windowing.h"
 
 HWND main_window_handle;
 

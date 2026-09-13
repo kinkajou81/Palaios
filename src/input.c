@@ -18,7 +18,7 @@ void register_raw_input_devices(HWND hWnd) {
         .hwndTarget = hWnd
     };
 
-    if (RegisterRawInputDevices(&Rid, 1, sizeof(Rid)) == FALSE) {
+    if (RegisterRawInputDevices(&Rid, 1, sizeof(RAWINPUTDEVICE)) == FALSE) {
         printf("Failed To Register Raw Input Keyboard. Error Code: %lu\n", GetLastError());
         exit(-1);
     }

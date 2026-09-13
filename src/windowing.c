@@ -6,6 +6,8 @@
 
 #include "windowing.hpp"
 
+HWND main_window_handle;
+
 void open_main_window(LPCTSTR window_title, HICON window_icon, HICON small_window_icon, COLORREF background_color, WNDPROC window_process) {
     ATOM window_class = RegisterClassExA(
         &(WNDCLASSEXA) {
@@ -46,4 +48,5 @@ void open_main_window(LPCTSTR window_title, HICON window_icon, HICON small_windo
         printf("Main Window Failed To Be Created, Error code: %lu\n", GetLastError());
         exit(-1);
     }
+    main_window_handle = window_handle;
 }

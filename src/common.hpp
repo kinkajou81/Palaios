@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdint.h>
+
 // this header must be included in every file before <windows.h>
 
 #undef UNICODE

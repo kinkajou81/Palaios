@@ -4,7 +4,7 @@
 
 #include "windowing.hpp"
 
-bool open_main_window(LPCTSTR window_title, HICON window_icon, HICON small_window_icon, COLORREF background_color, WNDPROC Wndproc) {
+void open_main_window(LPCTSTR window_title, HICON window_icon, HICON small_window_icon, COLORREF background_color, WNDPROC Wndproc) {
     ATOM window_class = RegisterClassExA(
         &(WNDCLASSEXA) {
             .cbSize = sizeof(WNDCLASSEXA),
@@ -23,7 +23,7 @@ bool open_main_window(LPCTSTR window_title, HICON window_icon, HICON small_windo
     );
     if(window_class == 0) {
         printf("Main Window Failed To Be Created, Error code: %lu\n", GetLastError());
-        return false;
+        exit(-1);
     }
 
     HWND window_handle = CreateWindowExA(
@@ -42,7 +42,7 @@ bool open_main_window(LPCTSTR window_title, HICON window_icon, HICON small_windo
     );
     if(window_handle == NULL) {
         printf("Main Window Failed To Be Created, Error code: %lu\n", GetLastError());
-        return false;
+        exit(-1);
     }
 
     return true;

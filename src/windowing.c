@@ -59,13 +59,13 @@ LRESULT WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
             return DefWindowProc(hWnd, uMsg, wParam, lParam);
         }
         case WM_INPUT: {
-            PUINT pcbSize = NULL;
-            PRAWINPUT pData = NULL;
-            UINT used_bytes = GetRawInputBuffer(pData, pcbSize, sizeof(RAWINPUTHEADER));
+            UINT pcbSize;
+            RAWINPUT pData;
+            UINT used_bytes = GetRawInputBuffer(&pData, &pcbSize, sizeof(RAWINPUTHEADER));
             if(used_bytes == -1) break;
 
             while(true) {
-                PRAWINPUT raw_input = NEXTRAWINPUTBLOCK(pData);
+                PRAWINPUT raw_input = NEXTRAWINPUTBLOCK(&pData);
                 if(raw_input->header.dwType != RIM_TYPEKEYBOARD) break; // keyboard only app
 
                 RAWKEYBOARD keyboard_input = raw_input->data.keyboard;

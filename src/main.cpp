@@ -6,6 +6,8 @@
 #include <stdio.h>
 
 #include "windowing.h"
+#include "input.h"
+#include "multithreaded.hpp"
 
 thread_local int16_t common_error = 0;
 
@@ -15,6 +17,17 @@ void exit_point() {
 
 int main() {
     atexit(exit_point);
+
+    multithreaded::main_window_args new_thread_args{"my window", NULL, NULL, RGB(0, 0, 0), WndProc};
+    LPDWORD window_thread_id = NULL;
+    HANDLE window_thread_handle = CreateThread(
+        NULL,
+        8000000,
+        multithreaded::main_window,
+        (LPVOID)&new_thread_args,
+        0,
+        window_thread_id
+    );
 
     exit(-1);
 }

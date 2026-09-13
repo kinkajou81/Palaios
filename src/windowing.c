@@ -6,6 +6,8 @@
 
 #include "windowing.h"
 
+typedef unsigned __int64 QWORD;
+
 HWND main_window_handle;
 
 void open_main_window(LPCTSTR window_title, HICON window_icon, HICON small_window_icon, COLORREF background_color, WNDPROC window_process) {
@@ -49,4 +51,39 @@ void open_main_window(LPCTSTR window_title, HICON window_icon, HICON small_windo
         exit(-1);
     }
     main_window_handle = window_handle;
+}
+
+LRESULT WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+    switch(uMsg) {
+        default: {
+            break;
+        }
+        case WM_INPUT: {
+            PUINT pcbSize = NULL;
+            PRAWINPUT pData = NULL;
+            UINT used_bytes = GetRawInputBuffer(pData, pcbSize, sizeof(RAWINPUTHEADER));
+            if(used_bytes == -1) break;
+
+            while(true) {
+                PRAWINPUT raw_input = NEXTRAWINPUTBLOCK(pData);
+                if(raw_input->header.dwType != RIM_TYPEKEYBOARD) break; // keyboard only app
+
+                RAWKEYBOARD keyboard_input = raw_input->data.keyboard;
+                // todo
+            }
+            
+            break;
+        // todo
+        }
+    }
+    return 1;
+}
+
+    HWND console = GetConsoleWindow();
+    if(console != NULL) ShowWindow(console, SW_HIDE);
+    else {
+        common_error = -1;
+        return;
+    }
+    common_error = 0;
 }

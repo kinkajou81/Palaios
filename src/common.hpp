@@ -1,8 +1,12 @@
 #pragma once
 
+// this header must be included in every file before <windows.h>
+
 #include <stdint.h>
 
-// this header must be included in every file before <windows.h>
+#ifndef __cplusplus
+#define thread_local __declspec(thread)
+#endif
 
 #undef UNICODE
 

@@ -79,6 +79,12 @@ LRESULT WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
     return 1;
 }
 
+bool launched_from_console() {
+    DWORD processList[2];
+    DWORD count = GetConsoleProcessList(processList, 2);
+    return (count > 1)&&(count != 0);
+}
+
     HWND console = GetConsoleWindow();
     if(console != NULL) ShowWindow(console, SW_HIDE);
     else {

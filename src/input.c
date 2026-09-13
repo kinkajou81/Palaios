@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "input.h"
+
 void register_raw_input_devices(HWND hWnd) {
     RAWINPUTDEVICE Rid;
 

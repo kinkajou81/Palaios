@@ -44,6 +44,4 @@ void open_main_window(LPCTSTR window_title, HICON window_icon, HICON small_windo
         printf("Main Window Failed To Be Created, Error code: %lu\n", GetLastError());
         exit(-1);
     }
-
-    return true;
 }

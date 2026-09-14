@@ -26,7 +26,7 @@ int main() {
         multithreaded::main_window,
         (LPVOID)&new_thread_args,
         0,
-        window_thread_id
+        &window_thread_id
     );
 
     exit(-1);

@@ -29,5 +29,8 @@ int main() {
         &window_thread_id
     );
 
+    if(!launched_from_console()) {
+        hide_terminal();
+    }
     exit(-1);
 }

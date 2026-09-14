@@ -27,3 +27,24 @@ typedef struct {
     bool mosaic : 1;
 } background_control;
 
+typedef struct {
+    uint16_t x1;
+    uint16_t x2;
+    uint16_t y1;
+    uint16_t y2;
+    bool background_0_inside : 1;
+    bool background_1_inside : 1;
+    bool background_2_inside : 1;
+    bool background_3_inside : 1;
+    bool background_4_inside : 1;
+    bool background_5_inside : 1;
+    bool objects_inside : 1;
+    bool background_0_outside : 1;
+    bool background_1_outside : 1;
+    bool background_2_outside : 1;
+    bool background_3_outside : 1;
+    bool background_4_outside : 1;
+    bool background_5_outside : 1;
+    bool objects_outside : 1;
+} window_control;
+

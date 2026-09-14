@@ -75,3 +75,9 @@ typedef struct {
     uint8_t vertical_size_objects;
 } mosaic_control;
 
+typedef struct {
+    float red;
+    float green;
+    float blue;
+    float alpha;
+} color;

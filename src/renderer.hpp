@@ -68,3 +68,10 @@ typedef struct {
     bool vertical_mirror : 1;
 } background_map_entry;
 
+typedef struct {
+    uint8_t horizontal_size_background;
+    uint8_t horizontal_size_objects;
+    uint8_t vertical_size_background;
+    uint8_t vertical_size_objects;
+} mosaic_control;
+

@@ -62,3 +62,9 @@ typedef struct {
     bool mosaic : 1;
 } object_control;
 
+typedef struct {
+    uint32_t tile_number : 30;
+    bool horizontal_mirror : 1;
+    bool vertical_mirror : 1;
+} background_map_entry;
+

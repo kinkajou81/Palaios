@@ -5,6 +5,7 @@
 #include <windows.h>
 #include <stdio.h>
 
+#include "renderer.hpp"
 #include "windowing.h"
 #include "input.h"
 #include "multithreaded.hpp"

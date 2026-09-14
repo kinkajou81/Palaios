@@ -48,3 +48,17 @@ typedef struct {
     bool objects_outside : 1;
 } window_control;
 
+typedef struct {
+    uint32_t tile_numbers[4];
+    uint8_t x;
+    uint8_t y;
+    uint8_t priority : 5;
+    uint8_t size : 2;
+    uint8_t shape : 2;
+    bool horizontal_flip : 1;
+    bool vertical_flip : 1;
+    bool disable : 1;
+    bool object_window : 1;
+    bool mosaic : 1;
+} object_control;
+

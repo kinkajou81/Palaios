@@ -87,12 +87,11 @@ bool launched_from_console() {
 
 void hide_terminal() {
     if(launched_from_console()) return;
-    
+
     HWND console = GetConsoleWindow();
     if(console != NULL) ShowWindow(console, SW_HIDE);
     else {
-        common_error = -1;
+        printf("Failed To Hide Console Window, Error Code: %lu\n", GetLastError());
         return;
     }
-    common_error = 0;
 }

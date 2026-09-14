@@ -19,7 +19,7 @@ int main() {
     atexit(exit_point);
 
     multithreaded::main_window_args new_thread_args{"my window", NULL, NULL, RGB(0, 0, 0), WndProc};
-    LPDWORD window_thread_id = NULL;
+    DWORD window_thread_id;
     HANDLE window_thread_handle = CreateThread(
         NULL,
         8000000,

@@ -19,6 +19,10 @@ void exit_point() {
 int main() {
     atexit(exit_point);
 
+    if(!launched_from_console()) {
+        hide_terminal();
+    }
+
     multithreaded::main_window_args new_thread_args{"my window", NULL, NULL, RGB(0, 0, 0), WndProc};
     DWORD window_thread_id;
     HANDLE window_thread_handle = CreateThread(
@@ -30,8 +34,5 @@ int main() {
         &window_thread_id
     );
 
-    if(!launched_from_console()) {
-        hide_terminal();
-    }
     exit(-1);
 }
